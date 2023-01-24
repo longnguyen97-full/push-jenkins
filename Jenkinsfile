@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Deploy Production') {
             steps {
-withCredentials([sshUserPrivateKey(credentialsId: 'test-jenkins-id', keyFileVariable: 'GITHUB_KEY')]) {
+withCredentials([sshUserPrivateKey(credentialsId: 'ssh-permakey', keyFileVariable: 'GITHUB_KEY')]) {
     sh 'echo ssh -i $GITHUB_KEY -l git -o StrictHostKeyChecking=no \\"\\$@\\" > run_ssh.sh'
     sh 'chmod +x run_ssh.sh'
     withEnv(['GIT_SSH=run_ssh.sh']) {
