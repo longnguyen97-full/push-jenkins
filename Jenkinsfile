@@ -8,6 +8,7 @@ pipeline {
 sh '''#!/bin/sh
 GIT=`which git`
 REPO_DIR=/var/www/html/hello-jenkins
+sudo su
 cd ${REPO_DIR}
 rm -f .git/index.lock
 ${GIT} config --global --add safe.directory ${REPO_DIR}
