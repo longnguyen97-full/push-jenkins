@@ -22,7 +22,7 @@ withCredentials([sshUserPrivateKey(credentialsId: 'permakey', keyFileVariable: '
         cd ${REPO_DIR}
         ${GIT} add --all .
         ${GIT} commit -m "Deploy production..."
-        ${GIT} push https://longnguyen97-full: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@hello-jenkins.git --all main'''
+        ${GIT} push https://longnguyen97-full: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@hello-jenkins.git --all main'''
     }
 }
             }
