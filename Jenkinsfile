@@ -7,7 +7,7 @@ pipeline {
                 script {
 sh '''#!/bin/sh
 GIT=`which git`
-REPO_DIR=/var/www/html/push-jenkins
+REPO_DIR=/var/www/html/hello-jenkins
 cd ${REPO_DIR}
 ${GIT} add --all .
 ${GIT} commit -m "Deploy production..."
