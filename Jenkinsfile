@@ -2,14 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Example') {
-            environment { 
-                ARTIFACTORY_CREDENTIALS = credentials('permakey') 
-            }
-            steps {
-                echo "user: $ARTIFACTORY_CREDENTIALS_USR password: $ARTIFACTORY_CREDENTIALS_PSW"
-            }
-        }
         stage('Deploy Production') {
             steps {
 withCredentials([sshUserPrivateKey(credentialsId: 'permakey', keyFileVariable: 'GITHUB_KEY')]) {
